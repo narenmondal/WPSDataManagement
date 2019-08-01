@@ -1,0 +1,166 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #c9c9c9;
+}
+.headBar{
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: #111;
+  width: 100%;
+  height: 60px;
+}
+#title{
+  color: #afacac;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  padding: 10px;
+}
+#profileImage, #notifyImage, #chatImage{
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    border: 1px solid black;
+    background: #b3b1b1; 
+    border-radius: 50%;
+    position: absolute;
+    top :10px;
+    right: 20px;
+    cursor: pointer;
+}
+#notifyImage{
+  right: 70px;
+}
+#chatImage{
+  right: 120px;
+}
+#navImage{
+  width: 90%;
+  padding: 10px;
+  background: #afacac;
+}
+/* navigation  */
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 40px;
+  }
+  
+  .sidebar a, 
+  .profileMenuItem {
+    padding: 8px 8px 8px 30px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #afacac;
+    display: block;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  
+  .sidebar a:hover, 
+  .profileMenuItem:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 25px;
+    margin-left: 50px;
+  }
+  
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: transparent;
+    color: #b3b1b1;
+    padding: 10px 15px;
+    border: none;
+  }
+  
+  .openbtn:hover, 
+  #add:hover {
+    background-color: #444;
+    color: white;
+  }
+  
+  #openNav{
+      position: fixed;
+      top: 0px;
+      left: 0px;
+  }
+
+/* ////////////// */
+
+
+.container{
+    width: 80%;
+    margin-left: 10%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.card{
+    width: 80%;
+    height: 100px;
+    position: relative;
+    background: #222222;
+    color: #afacac;
+    padding: 10px;
+    margin:  20px;
+    cursor: pointer;
+    transition: 250ms;
+}
+.card:hover{
+  color: white;
+  box-shadow: 1px 1px 7px rgb(63, 63, 63);
+  background: #111;
+}
+.card img{
+    position: absolute;
+    top : 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    border: 1px solid black;
+    background: #b3b1b1;
+    border-radius: 20px;
+}
+.card h4, 
+.card p{
+ margin: 0;
+ padding: 5px;
+}
+
+
+#profileMenu{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: #242424;
+  width: 170px;
+  position: absolute;
+  top: 50px;
+  right: 40px;
+  z-index: 1;
+  display: none;
+}
+
+.profileMenuItem{
+    padding: 15px 20px;
+    font-size: 14px;
+}
+

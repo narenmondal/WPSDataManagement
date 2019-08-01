@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./lib/jQuery.js"></script>
+    <script src="./lib/datatable.js"></script>
+    <link rel="stylesheet" href="./lib/datatable.css">
+    <link rel="stylesheet" href="./css/material.css">
+    <title>Material</title>
+</head>
+
+<body>
+
+    <ul id="profileMenu">
+        <li id="viewProfile" class="profileMenuItem">View Profile</li>
+        <li id="changePassword" class="profileMenuItem">Change Password</li>
+        <li id="logOut" class="profileMenuItem">Log Out</li>
+    </ul>
+
+    <div id="navbar" class="sidebar">
+        <img src="./images/logo.png" alt="Profile image" id="navImage">
+        <a href="javascript:void(0)" class="closebtn" id="closeNav">×</a>
+        <a href="./dashboard.html">Dashboard</a>
+        <a href="./material.html">Material</a>
+        <a href="#">Customer</a>
+        <a href="#">Vender</a>
+        <a href="#">Assets</a>
+        <a href="#">Catalog</a>
+        <a href="#">Reports</a>
+        <a href="#">Approvals</a>
+    </div>
+    <div class="headBar">
+        <button class="openbtn" id="openNav">☰</button>
+        <h1 id="title">Data Convergence</h1>
+        <img src="./images/chat.png" alt="Profile image" id="chatImage">
+        <img src="./images/notification.png" alt="notification image" id="notifyImage">
+        <img src="./images/logo.png" alt="Profile image" id="profileImage">
+    </div>
+
+    <div class="container">
+        <div class="head">
+            <div class="card">
+                <p>Pending</p>
+                <p id="pending">10</p>
+            </div>
+            <div class="card">
+                <p>Incomplete</p>
+                <p id="incomplete">7</p>
+            </div>
+            <div class="card">
+                <p>Active</p>
+                <p id="active">100</p>
+            </div>
+        </div>
+
+        <div class="check">
+            <p>Select Rows</p>
+            <input type="checkbox" id="selectRow">
+        </div>
+
+        <table id="materialTable" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Number</th>
+                    <th>Name</th>
+                    <th>Plant</th>
+                    <th>Unit</th>
+                    <th>Group</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>10001</td>
+                    <td>Material 1</td>
+                    <td>Plant 1</td>
+                    <td>Unit 1</td>
+                    <td>Group 1</td>
+                </tr>
+                <tr>
+                    <td>10002</td>
+                    <td>Material 2</td>
+                    <td>Plant 1</td>
+                    <td>Unit 1</td>
+                    <td>Group 2</td>
+                </tr>
+                <tr>
+                    <td>10003</td>
+                    <td>Material 3</td>
+                    <td>Plant 1</td>
+                    <td>Unit 2</td>
+                    <td>Group 1</td>
+                </tr>
+                <tr>
+                    <td>10004</td>
+                    <td>Material 4</td>
+                    <td>Plant 1</td>
+                    <td>Unit 2</td>
+                    <td>Group 2</td>
+                </tr>
+                <tr>
+                    <td>10005</td>
+                    <td>Material 5</td>
+                    <td>Plant 2</td>
+                    <td>Unit 1</td>
+                    <td>Group 1</td>
+                </tr>
+                <tr>
+                    <td>10006</td>
+                    <td>Material 6</td>
+                    <td>Plant 2</td>
+                    <td>Unit 1</td>
+                    <td>Group 2</td>
+                </tr>
+                <tr>
+                    <td>10007</td>
+                    <td>Material 7</td>
+                    <td>Plant 2</td>
+                    <td>Unit 2</td>
+                    <td>Group 1</td>
+                </tr>
+                <tr>
+                    <td>10008</td>
+                    <td>Material 8</td>
+                    <td>Plant 2</td>
+                    <td>Unit 2</td>
+                    <td>Group 2</td>
+                </tr>
+                <tr>
+                    <td>10009</td>
+                    <td>Material 9</td>
+                    <td>Plant 1</td>
+                    <td>Unit 3</td>
+                    <td>Group 1</td>
+                </tr>
+                <tr>
+                    <td>10010</td>
+                    <td>Material 10</td>
+                    <td>Plant 1</td>
+                    <td>Unit 3</td>
+                    <td>Group 2</td>
+                </tr>
+                <tr>
+                    <td>10011</td>
+                    <td>Material 11</td>
+                    <td>Plant 1</td>
+                    <td>Unit 3</td>
+                    <td>Group 3</td>
+                </tr>
+                <tr>
+                    <td>10012</td>
+                    <td>Material 12</td>
+                    <td>Plant 3</td>
+                    <td>Unit 1</td>
+                    <td>Group 1</td>
+                </tr>
+                <tr>
+                    <td>10013</td>
+                    <td>Material 13</td>
+                    <td>Plant 3</td>
+                    <td>Unit 1</td>
+                    <td>Group 1</td>
+                </tr>
+                <tr>
+                    <td>10014</td>
+                    <td>Material 14</td>
+                    <td>Plant 3</td>
+                    <td>Unit 2</td>
+                    <td>Group 1</td>
+                </tr>
+                <tr>
+                    <td>10015</td>
+                    <td>Material 15</td>
+                    <td>Plant 3</td>
+                    <td>Unit 2</td>
+                    <td>Group 2</td>
+                </tr>
+                <tr>
+                    <td>10016</td>
+                    <td>Material 16</td>
+                    <td>Plant 3</td>
+                    <td>Unit 3</td>
+                    <td>Group 1</td>
+                </tr>
+                <tr>
+                    <td>10017</td>
+                    <td>Material 17</td>
+                    <td>Plant 3</td>
+                    <td>Unit 1</td>
+                    <td>Group 2</td>
+                </tr>
+                <tr>
+                    <td>10018</td>
+                    <td>Material 18</td>
+                    <td>Plant 3</td>
+                    <td>Unit 1</td>
+                    <td>Group 3</td>
+                </tr>
+                <tr>
+                    <td>10019</td>
+                    <td>Material 19</td>
+                    <td>Plant 3</td>
+                    <td>Unit 3</td>
+                    <td>Group 1</td>
+                </tr>
+                <tr>
+                    <td>10020</td>
+                    <td>Material 20</td>
+                    <td>Plant 3</td>
+                    <td>Unit 2</td>
+                    <td>Group 3</td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+    <button id="add">+</button>
+    <ul id="addMenu">
+        <li id="createSingle" class="addMenuItem">Create Single</li>
+        <li id="createMultiple" class="addMenuItem">Create Multiple</li>
+    </ul>
+
+
+    <script src="./js/material.js"></script>
+</body>
+
+</html>

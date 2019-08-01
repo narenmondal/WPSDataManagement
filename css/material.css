@@ -1,0 +1,256 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #c9c9c9;
+}
+.headBar{
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: #111;
+    width: 100%;
+    height: 60px;
+  }
+  #title{
+    color: #afacac;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  #profileImage, #notifyImage, #chatImage{
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    border: 1px solid black;
+    background: #b3b1b1; 
+    border-radius: 50%;
+    position: absolute;
+    top :10px;
+    right: 20px;
+    cursor: pointer;
+}
+#notifyImage{
+  right: 70px;
+}
+#chatImage{
+  right: 120px;
+}
+  #profileMenu{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: #242424;
+    width: 170px;
+    position: absolute;
+    top: 50px;
+    right: 40px;
+    z-index: 2;
+    display: none;
+}
+
+.profileMenuItem{
+    padding: 15px 20px;
+    font-size: 14px;
+}
+
+/* navigation  */
+
+#navImage{
+    width: 90%;
+    padding: 10px;
+    background: #afacac;
+  }
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 40px;
+  }
+  
+  .sidebar a ,
+  .addMenuItem,
+  .profileMenuItem{
+    padding: 8px 8px 8px 30px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #bbbbbb;
+    display: block;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  
+  .sidebar a:hover, 
+  .addMenuItem:hover,  
+  .profileMenuItem:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 25px;
+    margin-left: 50px;
+  }
+  
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: transparent;
+    color: #b3b1b1;
+    padding: 10px 15px;
+    border: none;
+  }
+  
+  .openbtn:hover, #add:hover {
+    background-color: #444;
+    color: white;
+  }
+  
+  #openNav{
+      position: fixed;
+      top: 0px;
+      left: 0px;
+  }
+
+/* ////////////// */
+/*   header   */
+.container{
+    width: 80%;
+    margin-left: 10%;
+}
+.head{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 30px 0;
+}
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#incomplete,
+#pending,
+#active{
+    background: #242424;
+    color: white;
+    min-width: 50px;
+    padding: 10px;
+    margin-left: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* ////////////// */
+/*   select check box   */
+.check{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+#selectRow{
+    width: 40px;
+    height: 20px;
+    margin-left: 15px;
+    -webkit-appearance: none;
+    outline: none;
+    background: rgb(116, 116, 116);
+    border-radius: 10px;
+    transition: 250ms;
+    position: relative;
+}
+#selectRow:checked{
+    background: #111;
+}
+#selectRow::before{
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+    border-radius: 10px;
+    transition: 250ms;
+}
+#selectRow:checked::before{
+    left: 20px;
+}
+
+/* table properties */
+#materialTable_info{
+    margin-bottom: 50px;
+}
+table{
+    text-align: center;
+}
+thead tr{
+    background: #242424;
+    color: white;
+}
+.dataTables_length, 
+.dataTables_filter{
+    margin-bottom: 20px;
+}
+.dataTables_length select,
+.dataTables_filter input{
+    padding: 10px;
+    margin: 10px;
+}
+table.dataTable.display tbody tr.odd, 
+table.dataTable.display tbody tr.odd>.sorting_1 {
+    background: #aaa9a9;
+}
+table.dataTable.display tbody tr.even,
+ table.dataTable.display tbody tr.even>.sorting_1{
+    background: #c9c9c9;
+}
+
+/* ////////////// */
+/*   add button   */
+#add{
+    all: unset;
+    background: #242424;
+    color: white;
+    font-size: 25px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    cursor: pointer;
+}
+
+#addMenu{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: #242424;
+    width: 150px;
+    position: fixed;
+    bottom: 90px;
+    right: 60px;
+    display: none;
+}
+
+.addMenuItem{
+    padding: 15px 20px;
+}
+
+/* ////////////// */
