@@ -52,8 +52,13 @@ $(document).ready(function () {
     });
 
     $("#material").click(function () {
-        $("#profileMenu").hide(200);
         location.href = 'material.html';
+    });
+    $("#Customer").click(function () {
+        location.href = 'customer.html';
+    });
+    $("#Vendor").click(function () {
+        location.href = 'vendor.html';
     });
 
 
