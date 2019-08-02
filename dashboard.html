@@ -13,23 +13,21 @@
 <body>
 
     <div id="navbar" class="sidebar">
-        <img src="./images/logo.png" alt="Profile image" id="navImage">
         <a href="javascript:void(0)" class="closebtn" id="closeNav">×</a>
-        <a href="./dashboard.html">Dashboard</a>
-        <a href="./material.html">Material</a>
-        <a href="#">Customer</a>
-        <a href="#">Vender</a>
-        <a href="#">Assets</a>
-        <a href="#">Catalog</a>
-        <a href="#">Reports</a>
-        <a href="#">Approvals</a>
+        <a href="./dashboard.html"><img src="./images/Dashboard.png" alt="Customer icon"> Dashboard</a>
+        <a href="./material.html"><img src="./images/material.png" alt="material icon"> Material</a>
+        <a href="#"><img src="./images/Customer.png" alt="Customer icon"> Customer</a>
+        <a href="#"><img src="./images/Vendor.png" alt=""> Vender</a>
+        <a href="#"><img src="./images/Assets.png" alt=""> Assets</a>
+        <a href="#"><img src="./images/Cataloug.png" alt=""> Catalog</a>
+        <a href="#"><img src="./images/Reports.png" alt=""> Reports</a>
+        <a href="#"><img src="./images/task.png" alt=""> My Tasks</a>
     </div>
     <div class="headBar">
         <button class="openbtn" id="openNav">☰</button>
-        <h1 id="title">Data Convergence</h1>
-        <img src="./images/chat.png" alt="Profile image" id="chatImage">
+        <h1 id="title">Dashboard</h1>
         <img src="./images/notification.png" alt="notification image" id="notifyImage">
-        <img src="./images/logo.png" alt="Profile image" id="profileImage">
+        <img src="./images/profile.jpg" alt="Profile image" id="profileImage">
     </div>
 
     <ul id="profileMenu">
@@ -41,48 +39,52 @@
     <div class="container">
         <div class="card" id="material">
             <h4>Material</h4>
-            <img src="./images/logo.png" alt="">
+            <img src="./images/material.png" alt="material icon">
             <hr>
-            <p>50 / 100</p>
         </div>
         <div class="card" id="Customer">
             <h4>Customer</h4>
-            <img src="./images/logo.png" alt="">
+            <img src="./images/Customer.png" alt="Customer icon">
             <hr>
-            <p>50 / 100</p>
         </div>
         <div class="card" id="Vender">
             <h4>Vender</h4>
-            <img src="./images/logo.png" alt="">
+            <img src="./images/Vendor.png" alt="">
             <hr>
-            <p>50 / 100</p>
         </div>
         <div class="card" id="Assets">
             <h4>Assets</h4>
-            <img src="./images/logo.png" alt="">
+            <img src="./images/Assets.png" alt="">
             <hr>
-            <p>50 / 100</p>
         </div>
         <div class="card" id="Catalog">
             <h4>Catalog</h4>
-            <img src="./images/logo.png" alt="">
+            <img src="./images/Cataloug.png" alt="">
             <hr>
-            <p>50 / 100</p>
         </div>
         <div class="card" id="Reports">
             <h4>Reports</h4>
-            <img src="./images/logo.png" alt="">
+            <img src="./images/Reports.png" alt="">
             <hr>
-            <p>50 / 100</p>
         </div>
-        <div class="card" id="Approvals">
-            <h4>Approvals</h4>
-            <img src="./images/logo.png" alt="">
+        <div class="card" id="myTasks">
+            <h4>My Tasks</h4>
+            <img src="./images/task.png" alt="">
             <hr>
-            <p>50 / 100</p>
         </div>
     </div>
 
+    <button id="add">+</button>
+    <ul id="addMenu">
+        <li id="addMaterial" class="addMenuItem">Material</li>
+        <li id="addCustomer" class="addMenuItem">Customer</li>
+        <li id="addVendor" class="addMenuItem">Vendor</li>
+        <li id="addAssets" class="addMenuItem">Assets</li>
+        <li id="addCatalog" class="addMenuItem">Catalog</li>
+        <li id="addReport" class="addMenuItem">Reports</li>
+    </ul>
+
+    <img src="./images/chat.png" alt="Profile image" id="chatImage">
 
 
     <script src="./js/dashboard.js"></script>
