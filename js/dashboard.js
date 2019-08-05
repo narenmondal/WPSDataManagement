@@ -52,14 +52,13 @@ $(document).ready(function () {
     });
 
     $("#material").click(function () {
-        location.href = 'material.html';
+        location.href = './material.html';
     });
     $("#Customer").click(function () {
-        location.href = 'customer.html';
+        location.href = './customer.html';
     });
     $("#Vendor").click(function () {
-        location.href = 'vendor.html';
+        location.href = './vendor.html';
     });
-
 
 });
