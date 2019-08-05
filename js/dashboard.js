@@ -58,7 +58,7 @@ $(document).ready(function () {
         location.href = './customer.html';
     });
     $("#Vendor").click(function () {
-        location.href = './vendor.html';
+        location.href = './Vendor.html';
     });
 
 });
