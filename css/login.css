@@ -7,7 +7,7 @@ body{
 .content{
     width: 100vw;
     height: 100vh;
-    background: url("../images/loginbackground.jpg");
+    background: url("../images/loginbackground2.jpg");
     background-size: cover;
     display: flex;
     align-items: center;
