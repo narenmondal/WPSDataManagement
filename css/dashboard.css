@@ -148,6 +148,7 @@ body{
     margin:  20px;
     cursor: pointer;
     transition: 250ms;
+    border-radius: 10px;
 }
 .card:hover{
   color: white;
@@ -220,3 +221,4 @@ body{
 .addMenuItem{
   padding: 15px 20px;
 }
+/* ***************************** */
