@@ -48,7 +48,7 @@ body{
   right: 50px;
   cursor: pointer;
   width: 30px;
-  border: 1px solid black;
+  border: 1px solid #0e3d50;
   border-radius: 50%;
   padding: 5px;
 }
@@ -115,10 +115,6 @@ body{
     border: none;
   }
   
-  #add:hover {
-    background-color: #444;
-    color: white;
-  }
   
   #openNav{
       position: fixed;
@@ -190,7 +186,7 @@ body{
 
 #add{
   all: unset;
-  background: #242424;
+  background: #0e3d50;
   color: white;
   font-size: 25px;
   width: 40px;
