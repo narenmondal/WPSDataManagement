@@ -34,6 +34,7 @@ $(document).ready(function () {
         $("#navbar").css("width", "0");
     });
 
+
     $("#profileImage").click(function () {
         $("#profileMenu").toggle(200);
     });
