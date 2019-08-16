@@ -331,3 +331,7 @@ table.dataTable.display tbody tr.even,
   margin: 5px;
   cursor: pointer;
 }
+
+#materialTableBody tr :nth-child(2){
+  text-align: left;
+}

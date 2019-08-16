@@ -47,20 +47,37 @@ $(document).ready(function () {
 
     $.ajax({
         type: "GET",
-        url: "https://13.126.33.197:44300/sap/opu/odata/sap/ZMASTER_MANAGEMENT_MATERIAL_SRV/es_material_list/?$format=json",
+        url: "http://13.126.33.197:8000/sap/opu/odata/sap/ZMASTER_MANAGEMENT_MATERIAL_SRV/es_material_list/?$format=json",
         dataType: 'json',
         beforeSend: function (xhr) {
             xhr.setRequestHeader("Authorization", "Basic " + btoa("wp_abap" + ":" + "sap@123"));
         },
         success: function (data) {
             console.log(data);
+            Materiallist = data;
+            console.log(Materiallist.d.results[0].BaseUom);
+
+            var html;
+            $("#materialTableBody").empty();
+            for (var i = 0; i < Materiallist.d.results.length; i++) {
+                html = "<tr><td>" + Materiallist.d.results[i].MaterialNo + "</td><td>" + Materiallist.d.results[i].MaterialName + "</td><td>" + Materiallist.d.results[i].PlantText + "</td><td>" + Materiallist.d.results[i].BaseUom + "</td><td>" + Materiallist.d.results[i].MaterialGroup + "</td></tr>";
+
+                $("#materialTableBody").append(html);
+
+            }
+            $('#materialTable').DataTable({
+                "paging": true,
+                "ordering": false,
+                "info": false
+            });
         },
         error: function (e) {
             console.log(e);
         }
     });
 
-    var table = $('#materialTable').DataTable({ paging: false });
+
+
     // console.log(table.data()[0][0]);
     // table events
     $('#materialTable tbody').on('click', 'tr', function () {
