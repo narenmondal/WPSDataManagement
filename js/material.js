@@ -47,7 +47,7 @@ $(document).ready(function () {
 
     $.ajax({
         type: "GET",
-        url: "http://13.126.33.197:8000/sap/opu/odata/sap/ZMASTER_MANAGEMENT_MATERIAL_SRV/es_material_list/?$format=json",
+        url: "https://13.126.33.197:44300/sap/opu/odata/sap/ZMASTER_MANAGEMENT_MATERIAL_SRV/es_material_list/?$format=json",
         dataType: 'json',
         beforeSend: function (xhr) {
             xhr.setRequestHeader("Authorization", "Basic " + btoa("wp_abap" + ":" + "sap@123"));
