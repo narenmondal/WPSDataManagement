@@ -275,3 +275,59 @@ table.dataTable.display tbody tr.even,
 }
 
 /* ////////////// */
+
+/* create material */
+
+#materialInput{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  flex-direction: column;
+  top: 0vh;
+  left: 0vw;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.9);
+  display: none;
+}
+
+.inputText {
+  font-size: 18px;
+  padding-left: 10px;
+  width: 200px;
+  height: 50px;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid rgb(0, 0, 0);
+  background: #000000;
+  color: #aaa9a9;
+}
+
+.overlayButton{
+  background: #444;
+  color: #aaa9a9;
+  border: none;
+  height: 55px;
+  width: 90px;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+#filterList{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: #111;
+  max-height: 200px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+#filterList li{
+  background: #aaa9a9;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+}
