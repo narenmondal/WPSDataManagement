@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+    var Materiallist;
     var materialData = {
         data: [
             {
@@ -44,6 +44,21 @@ $(document).ready(function () {
             }
         ]
     };
+
+    $.ajax({
+        type: "GET",
+        url: "http://13.126.33.197:8000/sap/opu/odata/sap/ZMASTER_MANAGEMENT_MATERIAL_SRV/es_material_list/?$format=json",
+        dataType: 'json',
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader("Authorization", "Basic " + btoa("wp_abap" + ":" + "sap@123"));
+        },
+        success: function (data) {
+            console.log(data);
+        },
+        error: function (e) {
+            console.log(e);
+        }
+    });
 
     var table = $('#materialTable').DataTable({ paging: false });
     // console.log(table.data()[0][0]);
