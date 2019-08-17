@@ -8,6 +8,8 @@
     <script src="./lib/jQuery.js"></script>
     <script src="./lib/datatable.js"></script>
     <link rel="stylesheet" href="./lib/datatable.css">
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/table.css">
     <link rel="stylesheet" href="./css/customer.css">
     <title>Customer</title>
 </head>
@@ -22,6 +24,7 @@
 
     <div id="navbar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" id="closeNav">×</a>
+        <img src="./images/profile.jpg" alt="Profile image" id="profileImage">
         <a href="./dashboard.html"><img src="./images/Dashboard.png" alt="Customer icon"> Dashboard</a>
         <a href="./material.html"><img src="./images/material.png" alt="material icon"> Material</a>
         <a href="./customer.html"><img src="./images/Customer.png" alt="Customer icon"> Customer</a>
@@ -32,28 +35,10 @@
         <a href="#"><img src="./images/task.png" alt=""> My Tasks</a>
     </div>
     <div class="headBar">
-        <button class="openbtn" id="openNav">☰</button>
-        <h1 id="title">Customer</h1>
-        <img src="./images/notification.png" alt="notification image" id="notifyImage">
-        <img src="./images/profile2.jpg" alt="Profile image" id="profileImage">
+        <button class="openbtn" id="openNav">☰ Menu</button>
     </div>
 
     <div class="container">
-        <div class="head">
-            <div class="card">
-                <p>Pending</p>
-                <p id="pending">10</p>
-            </div>
-            <div class="card">
-                <p>Incomplete</p>
-                <p id="incomplete">7</p>
-            </div>
-            <div class="card">
-                <p>Active</p>
-                <p id="active">100</p>
-            </div>
-        </div>
-
         <div class="check">
             <p>Select Rows</p>
             <input type="checkbox" id="selectRow">
