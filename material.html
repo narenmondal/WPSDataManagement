@@ -24,7 +24,7 @@
 
     <div id="navbar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" id="closeNav">×</a>
-        <img src="./images/profile.jpg" alt="Profile image" id="profileImage">
+        <img src="./images/profile1.jpg" alt="Profile image" id="profileImage">
         <a href="./dashboard.html"><img src="./images/Dashboard.png" alt="Customer icon"> Dashboard</a>
         <a href="./material.html"><img src="./images/material.png" alt="material icon"> Material</a>
         <a href="./customer.html"><img src="./images/Customer.png" alt="Customer icon"> Customer</a>
@@ -75,8 +75,37 @@
             <ul id="filterList">
             </ul>
         </div>
+        <div class="createMaterialWarning" id="createMaterialWarning">
+            <p>Material with the same name already exists,<br> please select one of the options</p>
+            <img src="./images/viewMaterial.svg" alt="view material" id="viewMaterial">
+            <img src="./images/extendMaterial.svg" alt="extend material" id="extendMaterial">
+            <img src="./images/createMaterial.svg" alt="create material" id="createMaterial">
+        </div>
+    </div>
 
-        <script src="./js/material.js"></script>
+    <div id="extendMaterialTable">
+        <table id="plantTable" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Plant</th>
+                    <th>Location</th>
+                    <th>Werks</th>
+                    <th>Slocation</th>
+                </tr>
+            </thead>
+            <tbody id="plantTableBody">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+
+
+
+    <script src="./js/material.js"></script>
 </body>
 
 </html>

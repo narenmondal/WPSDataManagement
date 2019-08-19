@@ -1,50 +1,50 @@
 $(document).ready(function () {
-    var Materiallist;
-    var materialData = {
-        data: [
-            {
-                name: "material 1",
-                number: "10001"
-            },
-            {
-                name: "material 2",
-                number: "10002"
-            },
-            {
-                name: "material 3",
-                number: "10003"
-            },
-            {
-                name: "material 4",
-                number: "10004"
-            },
-            {
-                name: "material 5",
-                number: "10005"
-            },
-            {
-                name: "material 6",
-                number: "10006"
-            },
-            {
-                name: "material 7",
-                number: "10007"
-            },
-            {
-                name: "material 8",
-                number: "10008"
-            },
-            {
-                name: "material 9",
-                number: "10009"
-            },
-            {
-                name: "material 10",
-                number: "10010"
-            }
-        ]
-    };
+    var Materiallist, plantList, html, i;
 
+    // Plant data call and table init
+    $.ajax({
+        type: "GET",
+        url: "http://13.126.33.197:8000/sap/opu/odata/sap/ZMASTER_MANAGEMENT_MATERIAL_SRV/es_plant_list/?$format=json",
+        dataType: 'json',
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader("Authorization", "Basic " + btoa("wp_abap" + ":" + "sap@123"));
+        },
+        success: function (data) {
+            plantList = data;
+            $("#plantTableBody").empty();
+            for (i = 0; i < plantList.d.results.length; i++) {
+                html = "<tr><td>" + plantList.d.results[i].PlantText + "</td><td>" + plantList.d.results[i].SlocationText + "</td><td>" + plantList.d.results[i].Werks + "</td><td>" + plantList.d.results[i].Slocation + "</td></tr>";
+
+                $("#plantTableBody").append(html);
+            }
+
+            $('#plantTable').DataTable({
+                "paging": false,
+                "ordering": false,
+                "info": false,
+                "searching": false,
+                scrollY: '400px',
+                "columnDefs": [
+                    {
+                        "targets": [2],
+                        "visible": false,
+                        "searchable": false
+                    },
+                    {
+                        "targets": [3],
+                        "visible": false,
+                        "searchable": false
+                    }
+                ]
+            });
+
+        },
+        error: function (e) {
+            console.log(e);
+        }
+    });
+
+    // material data call and table init
     $.ajax({
         type: "GET",
         url: "http://13.126.33.197:8000/sap/opu/odata/sap/ZMASTER_MANAGEMENT_MATERIAL_SRV/es_material_list/?$format=json",
@@ -53,19 +53,18 @@ $(document).ready(function () {
             xhr.setRequestHeader("Authorization", "Basic " + btoa("wp_abap" + ":" + "sap@123"));
         },
         success: function (data) {
-            console.log(data);
             Materiallist = data;
-            console.log(Materiallist.d.results[0].BaseUom);
 
-            var html;
             $("#materialTableBody").empty();
-            for (var i = 0; i < Materiallist.d.results.length; i++) {
+            for (i = 0; i < Materiallist.d.results.length; i++) {
                 html = "<tr><td>" + Materiallist.d.results[i].MaterialNo + "</td><td>" + Materiallist.d.results[i].MaterialName + "</td><td>" + Materiallist.d.results[i].PlantText + "</td><td>" + Materiallist.d.results[i].BaseUom + "</td><td>" + Materiallist.d.results[i].MaterialGroup + "</td></tr>";
 
                 $("#materialTableBody").append(html);
 
             }
-            $('#materialTable').DataTable();
+            $('#materialTable').DataTable({
+                "lengthMenu": [[25, 50, 100, -1], [25, 50, 100, "All"]]
+            });
         },
         error: function (e) {
             console.log(e);
@@ -74,7 +73,7 @@ $(document).ready(function () {
 
 
 
-    // console.log(table.data()[0][0]);
+
     // table events
     $('#materialTable tbody').on('click', 'tr', function () {
         if ($('#selectRow').is(":checked") === true) {
@@ -112,9 +111,23 @@ $(document).ready(function () {
     $('#materialInputName').on("keyup", function (e) {
         if (e.keyCode == 13) {
             console.log('Enter');
+            for (i = 0; i < Materiallist.d.results.length; i++) {
+                if ($("#materialInputName").val().toUpperCase() === Materiallist.d.results[i].MaterialName.toUpperCase()) {
+                    $("#createMaterialWarning").css('display', 'block');
+                    break;
+                }
+            }
+
         }
+    });
+
+    $("body").on("keyup", function (e) {
         if (e.keyCode == 27) {
-            console.log('Escape');
+            $("#materialInputName").val("");
+            $("#materialInput").css('display', 'none');
+            $("#createMaterialWarning").css('display', 'none');
+            $("#extendMaterialTable").css('display', 'none');
+            $("#filterList").empty();
         }
     });
     // click events
@@ -146,6 +159,22 @@ $(document).ready(function () {
     $("#closeNav").click(function () {
         $("#navbar").css("width", "0");
     });
+
+
+    // Extend material
+    $("#extendMaterial").on("click", function () {
+        $("#materialInputName").val("");
+        $("#materialInput").css('display', 'none');
+        $("#createMaterialWarning").css('display', 'none');
+        $("#filterList").empty();
+
+        $("#extendMaterialTable").css('display', 'flex');
+    });
+
+    $('#plantTable tbody').on('click', 'tr', function () {
+        $(this).toggleClass('rowSelct');
+    });
+
     // profile controls
     $("#profileImage").click(function () {
         $("#profileMenu").toggle(200);
