@@ -65,11 +65,7 @@ $(document).ready(function () {
                 $("#materialTableBody").append(html);
 
             }
-            $('#materialTable').DataTable({
-                "paging": true,
-                "ordering": false,
-                "info": false
-            });
+            $('#materialTable').DataTable();
         },
         error: function (e) {
             console.log(e);
@@ -101,15 +97,25 @@ $(document).ready(function () {
         $("#filterList").empty();
         input = $("#materialInputName").val();
         if (input !== "") {
-            for (material of materialData.data) {
-                if (material.name.toUpperCase().indexOf(input.toUpperCase()) > -1) {
-                    $("#filterList").append("<li>" + material.name + "</li>");
+            for (var i = 0; i < Materiallist.d.results.length; i++) {
+                if (Materiallist.d.results[i].MaterialName.toUpperCase().indexOf(input.toUpperCase()) > -1) {
+                    $("#filterList").append("<li>" + Materiallist.d.results[i].MaterialName + "</li>");
                 }
             }
         }
     });
     $("#filterList").on("click", "li", function () {
-        console.log(this.innerText);
+        $("#materialInputName").val(this.innerText);
+        $("#materialInputName").focus();
+    });
+
+    $('#materialInputName').on("keyup", function (e) {
+        if (e.keyCode == 13) {
+            console.log('Enter');
+        }
+        if (e.keyCode == 27) {
+            console.log('Escape');
+        }
     });
     // click events
 
@@ -126,6 +132,7 @@ $(document).ready(function () {
     $("#createSingle").click(function () {
         $("#addMenu").hide(200);
         $("#materialInput").css('display', 'flex');
+        $("#materialInputName").focus();
     });
 
     $("#createMultiple").click(function () {
@@ -156,15 +163,5 @@ $(document).ready(function () {
         $("#profileMenu").hide(200);
         location.href = './login.html';
     });
-    // Creat material popup buttons
-    $("#materialNextButton").click(function () {
-        $("#materialInput").css('display', 'none');
-
-    });
-    $("#materialCancelButton").click(function () {
-        $("#materialInput").css('display', 'none');
-    });
-
-
 });
 
