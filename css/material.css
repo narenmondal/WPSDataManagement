@@ -3,6 +3,38 @@
     width: 80%;
     margin-left: 10%;
 }
+
+/* plant data table  */
+
+#extendMaterialTable{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  flex-direction: column;
+  top: 0vh;
+  left: 0vw;
+  z-index: 3;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.dataTables_scroll  {
+  color: black;
+  cursor: pointer;
+  width: 500px;
+}
+
+.plantSelct{
+  background: #0e3d50 !important;
+  color: white;
+}
+
+#plantTable{
+  text-align: center;
+}
+
 /* create material */
 
 #materialInput{
@@ -79,41 +111,29 @@ background-color: rgba(255, 255, 255, 0.2);
 
 #viewMaterial,
 #extendMaterial,
-#createMaterial{
+#createMaterial,
+#selectAll,
+#unselectAll,
+#ExtendToSelected{
   border: none;
   width: 30px;
-  margin: 5px;
+  height: 30px;
+  margin: 15px;
   cursor: pointer;
   color: #dfdbdb;
   font-size: 14px;
 }
 
-#extendMaterialTable{
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  flex-direction: column;
-  top: 0vh;
-  left: 0vw;
-  z-index: 3;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.9);
+#plantLocationLinks{
+  display: flex;
+  margin: 0;
+  padding: 0;
 }
-
-#plantTable  {
-  color: black;
+#plantLocationLinks h5{
+  margin: 10px;
+  padding: 5px 15px;
+  border: 1px solid white;
+  color: white;
   cursor: pointer;
 }
-#plantTable thead{
-  width: 700px;
-}
 
-.rowSelct{
-  background: #0e3d50 !important;
-  color: white;
-}
-#plantTable_wrapper{
-  width: 700px;
-}

@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var Materiallist, plantList, html, i;
+    var Materiallist, plantList, html, i, materialDataTable, plantDataTable;
 
     // Plant data call and table init
     $.ajax({
@@ -18,7 +18,7 @@ $(document).ready(function () {
                 $("#plantTableBody").append(html);
             }
 
-            $('#plantTable').DataTable({
+            plantDataTable = $('#plantTable').DataTable({
                 "paging": false,
                 "ordering": false,
                 "info": false,
@@ -62,7 +62,7 @@ $(document).ready(function () {
                 $("#materialTableBody").append(html);
 
             }
-            $('#materialTable').DataTable({
+            materialDataTable = $('#materialTable').DataTable({
                 "lengthMenu": [[25, 50, 100, -1], [25, 50, 100, "All"]]
             });
         },
@@ -71,16 +71,13 @@ $(document).ready(function () {
         }
     });
 
-
-
-
     // table events
     $('#materialTable tbody').on('click', 'tr', function () {
         if ($('#selectRow').is(":checked") === true) {
             $(this).toggleClass('selected');
 
         } else {
-            var data = table.row(this).data();
+            var data = materialDataTable.row(this).data();
             alert('You clicked on ' + data[0] + '\'s row');
         }
     });
@@ -103,14 +100,14 @@ $(document).ready(function () {
             }
         }
     });
+
     $("#filterList").on("click", "li", function () {
-        $("#materialInputName").val(this.innerText);
         $("#materialInputName").focus();
+        $("#materialInputName").val(this.innerText);
     });
 
     $('#materialInputName').on("keyup", function (e) {
         if (e.keyCode == 13) {
-            console.log('Enter');
             for (i = 0; i < Materiallist.d.results.length; i++) {
                 if ($("#materialInputName").val().toUpperCase() === Materiallist.d.results[i].MaterialName.toUpperCase()) {
                     $("#createMaterialWarning").css('display', 'block');
@@ -128,6 +125,7 @@ $(document).ready(function () {
             $("#createMaterialWarning").css('display', 'none');
             $("#extendMaterialTable").css('display', 'none');
             $("#filterList").empty();
+            $('#plantTable tbody tr').removeClass('plantSelct');
         }
     });
     // click events
@@ -136,10 +134,6 @@ $(document).ready(function () {
         if ($('#selectRow').is(":checked") === false) {
             $('#materialTable tbody tr').removeClass('selected');
         }
-    });
-    // add material menu controls
-    $("#add").click(function () {
-        $("#addMenu").toggle(200);
     });
 
     $("#createSingle").click(function () {
@@ -151,15 +145,6 @@ $(document).ready(function () {
     $("#createMultiple").click(function () {
         $("#addMenu").hide(200);
     });
-    // nav open and close
-    $("#openNav").click(function () {
-        $("#navbar").css("width", "200px");
-    });
-
-    $("#closeNav").click(function () {
-        $("#navbar").css("width", "0");
-    });
-
 
     // Extend material
     $("#extendMaterial").on("click", function () {
@@ -169,28 +154,21 @@ $(document).ready(function () {
         $("#filterList").empty();
 
         $("#extendMaterialTable").css('display', 'flex');
+        plantDataTable.draw(false);
+
     });
 
     $('#plantTable tbody').on('click', 'tr', function () {
-        $(this).toggleClass('rowSelct');
+        $(this).toggleClass('plantSelct');
     });
 
-    // profile controls
-    $("#profileImage").click(function () {
-        $("#profileMenu").toggle(200);
+    $("#selectAll").on("click", function () {
+        $('#plantTable tbody tr').addClass('plantSelct');
     });
 
-    $("#viewProfile").click(function () {
-        $("#profileMenu").hide(200);
+    $("#unselectAll").on("click", function () {
+        $('#plantTable tbody tr').removeClass('plantSelct');
     });
 
-    $("#changePassword").click(function () {
-        $("#profileMenu").hide(200);
-    });
-
-    $("#logOut").click(function () {
-        $("#profileMenu").hide(200);
-        location.href = './login.html';
-    });
 });
 
