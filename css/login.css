@@ -89,7 +89,7 @@ input{
 
 #error{
     color: red; 
-    padding: 5px;
+    padding: 5px 7px;
     background: rgba(255, 0, 0, 0.1);
     border: 1px solid red;
     font-size: 12px; 
