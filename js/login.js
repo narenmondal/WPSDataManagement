@@ -1,5 +1,18 @@
 $(document).ready(function () {
-    $("#login").click(function () {
+    $("#login").click(login);
+
+    $('#password').on("keyup", function (e) {
+        if (e.keyCode == 13) {
+            login();
+        }
+    });
+    $('#userName').on("keyup", function (e) {
+        if (e.keyCode == 13) {
+            $('#password').focus();
+        }
+    });
+
+    function login() {
 
         var userName = $("#userName").val();
         var password = $("#password").val();
@@ -11,5 +24,5 @@ $(document).ready(function () {
             $("#error").show();
             $("#password").val("");
         }
-    });
+    }
 });

@@ -28,7 +28,7 @@
 
 .plantSelct{
   background: #0e3d50 !important;
-  color: white;
+  color: #aaaaaa;
 }
 
 #plantTable{
@@ -112,13 +112,16 @@ background-color: rgba(255, 255, 255, 0.2);
 #viewMaterial,
 #extendMaterial,
 #createMaterial,
+#materialselectAll,
+#materialunselectAll,
+#materialExtendToSelected,
 #selectAll,
 #unselectAll,
 #ExtendToSelected{
   border: none;
-  width: 30px;
-  height: 30px;
-  margin: 15px;
+  width: 25px;
+  height: 25px;
+  margin: 10px;
   cursor: pointer;
   color: #dfdbdb;
   font-size: 14px;
@@ -136,4 +139,3 @@ background-color: rgba(255, 255, 255, 0.2);
   color: white;
   cursor: pointer;
 }
-

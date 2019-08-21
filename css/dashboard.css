@@ -19,8 +19,7 @@
 }
 .card:hover{
   color: white;
-  box-shadow: 1px 1px 7px #3f3f3f;
-  background: #111;
+  box-shadow: 3px 3px 7px #3f3f3f;
 }
 .card img{
     position: absolute;

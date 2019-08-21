@@ -1,13 +1,14 @@
 body{
     margin: 0;
     padding: 0;
+    background: url("../images/loginbackground2.jpg");
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .content{
     width: 100vw;
     height: 100vh;
-    background: url("../images/loginbackground2.jpg");
+    background: rgba(0, 0, 0, 0.7);
     background-size: cover;
     display: flex;
     align-items: center;
@@ -43,7 +44,7 @@ input:not(:focus):valid~.floating-label {
     height: 35px;
     border: none;
     outline: none;
-    border-bottom: 2px solid rgb(0, 0, 0);
+    border-bottom: 2px solid #0e3d50;
 }
 
 .floating-label {
@@ -66,7 +67,7 @@ img{
     all: unset;
     margin: 10px;
     padding: 10px;
-    background: #242424;
+    background: #0e3d50;
     color: white;
     width: 100%;
     text-align: center;
@@ -76,7 +77,7 @@ a{
     all: unset;
     font-size: 13px;
     cursor: pointer;
-    color: #757272;
+    color: #bdbdbd;
 }
 a:hover{
     color: white;
@@ -84,4 +85,13 @@ a:hover{
 input{
     background: transparent;
     color: white;
+}
+
+#error{
+    color: red; 
+    padding: 5px;
+    background: rgba(255, 0, 0, 0.1);
+    border: 1px solid red;
+    font-size: 12px; 
+    display: none;
 }
