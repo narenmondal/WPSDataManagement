@@ -105,6 +105,7 @@ $(document).ready(function () {
         $("#materialInputName").focus();
         $("#materialInputName").val(this.innerText);
     });
+
     // enter press on material name
     $('#materialInputName').on("keyup", function (e) {
         if (e.keyCode == 13) {
@@ -117,6 +118,7 @@ $(document).ready(function () {
 
         }
     });
+
     // escape press
     $("body").on("keyup", function (e) {
         if (e.keyCode == 27) {
@@ -128,8 +130,8 @@ $(document).ready(function () {
             $('#plantTable tbody tr').removeClass('plantSelct');
         }
     });
-    // click events
 
+    // select enable and disable
     $("#selectRow").click(function () {
         if ($('#selectRow').is(":checked") === false) {
             $('#materialTable tbody tr').removeClass('selected');
@@ -143,6 +145,7 @@ $(document).ready(function () {
         }
     });
 
+    // create single and multiple
     $("#createSingle").click(function () {
         $("#addMenu").hide(200);
         $("#materialInput").css('display', 'flex');
@@ -162,7 +165,6 @@ $(document).ready(function () {
 
         $("#extendMaterialTable").css('display', 'flex');
         plantDataTable.draw(false);
-
     });
 
     $('#plantTable tbody').on('click', 'tr', function () {

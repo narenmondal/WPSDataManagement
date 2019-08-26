@@ -1,9 +1,5 @@
 $(document).ready(function () {
-
-    $("#add").click(function () {
-        $("#addMenu").toggle(200);
-    });
-
+    // add items 
     $("#addMaterial").click(function () {
         $("#addMenu").hide(200);
     });
@@ -11,6 +7,7 @@ $(document).ready(function () {
     $("#addCustomer").click(function () {
         $("#addMenu").hide(200);
     });
+
     $("#addVendor").click(function () {
         $("#addMenu").hide(200);
     });
@@ -18,6 +15,7 @@ $(document).ready(function () {
     $("#addAssets").click(function () {
         $("#addMenu").hide(200);
     });
+
     $("#addCatalog").click(function () {
         $("#addMenu").hide(200);
     });
@@ -26,32 +24,7 @@ $(document).ready(function () {
         $("#addMenu").hide(200);
     });
 
-    $("#openNav").click(function () {
-        $("#navbar").css("width", "200px");
-    });
-
-    $("#closeNav").click(function () {
-        $("#navbar").css("width", "0");
-    });
-
-
-    $("#profileImage").click(function () {
-        $("#profileMenu").toggle(200);
-    });
-
-    $("#viewProfile").click(function () {
-        $("#profileMenu").hide(200);
-    });
-
-    $("#changePassword").click(function () {
-        $("#profileMenu").hide(200);
-    });
-
-    $("#logOut").click(function () {
-        $("#profileMenu").hide(200);
-        location.href = './login.html';
-    });
-
+    // navigation links
     $("#material").click(function () {
         location.href = './material.html';
     });

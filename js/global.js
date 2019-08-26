@@ -4,6 +4,7 @@ $("#openNav").click(function () {
 });
 
 $("#closeNav").click(function () {
+    $("#profileMenu").hide(200);
     $("#navbar").css("width", "0");
 });
 

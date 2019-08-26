@@ -81,6 +81,10 @@ body{
       top: 0px;
       left: 0px;
   }
+
+  #openNav:hover{
+color: white;
+  }
 #profileImage{
     width: 100px;
     clip-path: circle(40%);
