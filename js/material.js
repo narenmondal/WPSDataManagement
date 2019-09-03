@@ -78,7 +78,10 @@ $(document).ready(function () {
 
         } else {
             var data = materialDataTable.row(this).data();
-            alert('You clicked on ' + data[0] + '\'s row');
+            // alert('You clicked on ' + data[0] + '\'s row');
+            sessionStorage.setItem("materialNumber", data[0]);
+            sessionStorage.setItem("materialPlant", data[2]);
+            location.href = "./materialDetails.html";
         }
     });
 
@@ -186,6 +189,20 @@ $(document).ready(function () {
     $("#materialunselectAll").on("click", function () {
         $('#materialTable tbody tr').removeClass('selected');
     });
+
+    $("#viewMaterial").on("click", function () {
+        // $("#materialInputName").val()
+        for (i = 0; i < Materiallist.d.results.length; i++) {
+            if ($("#materialInputName").val().toUpperCase() === Materiallist.d.results[i].MaterialName.toUpperCase()) {
+                console.log(Materiallist.d.results[i]);
+                sessionStorage.setItem("materialNumber", Materiallist.d.results[i].MaterialNo);
+                sessionStorage.setItem("materialPlant", Materiallist.d.results[i].PlantText);
+                location.href = "./materialDetails.html";
+                break;
+            }
+        }
+    });
+
 
 });
 
