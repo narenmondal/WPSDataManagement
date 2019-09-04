@@ -1,6 +1,6 @@
 .container{
 width: 80%;
-margin-left: 10%;
+margin: 0 0 50px 10%;
 }
 
 #navLinks{
@@ -67,4 +67,9 @@ margin-left: 10%;
     position: fixed;
     bottom: 50px;
     right: 50px;
+}
+
+input:disabled,
+textarea:disabled{
+    color: black;
 }
