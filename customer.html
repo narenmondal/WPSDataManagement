@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+  
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -134,6 +134,26 @@
             <li id="createSingle" class="addMenuItem">Create Single</li>
             <li id="createMultiple" class="addMenuItem">Create Multiple</li>
         </ul>
+
+            <!-- material create input  -->
+    <div id="customerInput">
+        <div class="inputdata">
+            <!-- <input type="text" id="materialInputName" class="inputText" placeholder="Material Name"> -->
+            <input type="text" id="CustomerAccountInputName" class="inputText" placeholder="Account Group">
+            <input type="text" id="CustomerInputName" class="inputText" placeholder="Customer Name">
+            <input type="text" id="CustomerSearchTermInputName" class="inputText" placeholder="Search Term">
+            <input type="text" id="CustomerPostalCodeInputName" class="inputText" placeholder="Postal Code">
+            <input type="text" id="CustomerCountryInputName" class="inputText" placeholder="Country">
+            <ul id="filterList">
+            </ul>
+        </div>
+
+         <!-- <div class="createMaterialWarning" id="createMaterialWarning">
+            <p>Material with the same name already exists,<br> please select one of the options</p>
+            <img src="./images/viewMaterial.svg" alt="view material" id="viewMaterial">
+            <img src="./images/extendMaterial.svg" alt="extend material" id="extendMaterial">
+            <img src="./images/createMaterial.svg" alt="create material" id="createMaterial">
+        </div> -->
 
         <script src="./js/customer.js"></script>
 
